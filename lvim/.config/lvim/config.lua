@@ -197,13 +197,13 @@ lvim.plugins = {
     "folke/trouble.nvim",
     cmd = "TroubleToggle",
   },
-  -- {
-  --   "j-hui/fidget.nvim",
-  --   config = function()
-  --     require('fidget').setup({
-  --     })
-  --   end
-  -- },
+  {
+    "j-hui/fidget.nvim",
+    config = function()
+      require('fidget').setup({
+      })
+    end
+  },
   {
     "karb94/neoscroll.nvim",
     event = "WinScrolled",
