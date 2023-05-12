@@ -1,3 +1,4 @@
 lvim/.config/lvim/plugin/
 bpytop/.config/bpytop/error.log
+lvim/.config/lvim/lazy-lock.json
 *.log
