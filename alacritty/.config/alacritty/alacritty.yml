@@ -1,5 +1,5 @@
 window:
-  opacity: 0.7
+  opacity: 0.85
   padding:
     x: 2
     y: 4
@@ -59,4 +59,3 @@ colors:
     magenta: "#FF1493"
     cyan: "#00CCCC"
     white: "#FFFAFA"
-
