@@ -40,15 +40,13 @@ colors:
     cursor: "#ff0017"
   primary:
     background: "#10100E"
-    # foreground: "#fffaf3"
-    foreground: "#ffffff"
+    foreground: "#fffaf3"
   normal:
     black: "#10100E"
     red: "#C40233"
-    # green: "#009F6B"
-    green: "#8ce00a"
+    green: "#009F6B"
     yellow: "#FFD700"
-    blue: "#008df8"
+    blue: "#0087BD"
     magenta: "#9A4EAE"
     cyan: "#20B2AA"
     white: "#C6C6C4"
