@@ -125,3 +125,6 @@ eval "$(zoxide init bash)"
 eval "$(mcfly init bash)"
 eval "$(mcfly-fzf init bash)"
 eval "$(starship init bash)"
+
+
+export PATH=$PATH:$HOME/.local/bin

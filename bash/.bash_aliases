@@ -1,7 +1,7 @@
 # fun stuff
 alias neofetch='fastfetch'
 alias wget='wget2'
-alias cat='batcat -p'
+alias cat='bat -p'
 alias linutil='curl -fsSL https://christitus.com/linuxdev | sh'
 
 alias wifi-list='nmcli d wifi list'
