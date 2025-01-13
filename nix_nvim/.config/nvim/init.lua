@@ -303,16 +303,6 @@ require("lazy").setup({
 
 	{ -- LSP Configuration & Plugins
 		"neovim/nvim-lspconfig",
-		dependencies = {
-			-- manual install LSPs via nixos/configuration.nix
-			--{ "williamboman/mason.nvim", config = true }, -- NOTE: Must be loaded before dependants
-			--"williamboman/mason-lspconfig.nvim",
-			--"WhoIsSethDaniel/mason-tool-installer.nvim",
-
-			-- Useful status updates for LSP.
-			-- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
-			{ "j-hui/fidget.nvim", opts = {} },
-		},
 		config = function()
 			-- taken from nix_init.lua
 			local lspconfig = require("lspconfig")
