@@ -3,10 +3,10 @@
 PID=$(pgrep -a alacritty | grep -- '--class AlacrittyScratchpad' | awk '{print $1}')
 
 if [ -n "$PID" ]; then
-    kill $PID
+    kill "$PID"
 else
     echo "No Alacritty instance with classname 'AlacrittyScratchpad' found."
 fi
 
 # Scratchpad for Alacritty
-alacritty --class AlacrittyScratchpad -e tmux new -As scratch
+alacritty -o "window.dimensions.lines=45" -o "window.dimensions.columns=150" --class AlacrittyScratchpad -e tmux new -As scratch
