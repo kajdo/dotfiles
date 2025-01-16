@@ -24,13 +24,16 @@ alias performance='sudo cpupower frequency-set --governor performance'
 # alias governors='cpufreq-info --governors'
 alias governors='cat /sys/devices/system/cpu/cpu*/cpufreq/scaling_available_governors'
 
-# development
+# development & ai fun
 alias gg='lazygit'
 alias py='python -c "import sys; print(eval(sys.argv[1]))"'
-alias peer='aider --model openrouter/deepseek/deepseek-chat --chat-language english --no-auto-commits --subtree-only'
+alias peer='aider --model openrouter/deepseek/deepseek-chat --chat-language english --no-auto-commits --subtree-only --no-suggest-shell-commands'
+alias peergoogle='aider --model openrouter/google/gemini-2.0-flash-exp:free  --chat-language english --no-auto-commits --subtree-only --no-suggest-shell-commands'
+alias peerchat='aider --model openrouter/deepseek/deepseek-chat --chat-language english --no-suggest-shell-commands --llm-history-file ~/tmp/.aider.llm.history --chat-history-file ~/tmp/.aider.chat.history.md --input-history-file ~/tmp/.aider.input.history --no-show-model-warnings'
 alias peer-or='aider --model openrouter/deepseek/deepseek-chat --chat-language english --no-auto-commits --subtree-only'
 alias peer-ds='aider --model deepseek/deepseek-chat --chat-language english --no-auto-commits --subtree-only'
 alias peer-o1='aider --model o1-mini --chat-language english --no-auto-commits --subtree-only'
+alias ai='chatblade -c mini'
 
 # some individual stuff
 alias clock='tty-clock -c'

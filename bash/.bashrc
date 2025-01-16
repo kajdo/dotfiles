@@ -96,6 +96,10 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
+if [ -f ~/.cred ]; then
+    . ~/.cred
+fi
+
 # set bat as manpager
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
