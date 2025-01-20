@@ -4,8 +4,8 @@
 
 [manager]
 # ratio          = [ 1, 4, 3 ]
-ratio          = [ 2, 3, 5 ]
-sort_by        = "modified"
+ratio          = [ 2, 2, 6 ]
+sort_by        = "mtime"
 sort_sensitive = false
 sort_reverse 	 = true
 sort_dir_first = true

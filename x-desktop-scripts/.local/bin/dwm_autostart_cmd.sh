@@ -11,3 +11,6 @@ picom --config ~/.config/picom/picom.conf -b
 
 # start dunst
 dunst &
+
+# start nm-applet
+nm-applet &
