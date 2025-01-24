@@ -3,6 +3,7 @@ alias neofetch='fastfetch'
 alias wget='wget2'
 alias cat='bat -p'
 alias linutil='curl -fsSL https://christitus.com/linuxdev | sh'
+alias fin='cd /home/kajdo/git/aktienator/ && ./nix_start'
 
 alias wifi-list='nmcli d wifi list'
 alias docker-ip='sudo docker inspect -f "{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}"'
