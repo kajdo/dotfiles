@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# start volumeicon for traybar
+volumeicon &
+
 # start picom for transparancy
 set_random_wallpaper.sh &
 
