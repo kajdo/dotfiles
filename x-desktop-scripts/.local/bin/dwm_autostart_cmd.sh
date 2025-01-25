@@ -11,3 +11,6 @@ picom --config ~/.config/picom/picom.conf -b
 
 # start dunst
 dunst &
+
+# unclutter -- hide mousecursor if not needed
+unclutter --timeout 1 &
