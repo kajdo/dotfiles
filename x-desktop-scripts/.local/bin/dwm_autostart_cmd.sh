@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-# start volumeicon for traybar
-volumeicon &
+# start sxhkd for keyboard shortcuts
+sxhkd &
 
 # start picom for transparancy
 set_random_wallpaper.sh &
@@ -15,11 +15,14 @@ picom --config ~/.config/picom/picom.conf -b
 # start dunst
 dunst &
 
-# start nm-applet
-nm-applet &
-
 # hide mousecursor if not needed
 unclutter --timeout 1 &
 
 # start blueman-applet
 blueman-applet &
+
+# start volumeicon for traybar
+volumeicon &
+
+# start nm-applet
+nm-applet &
