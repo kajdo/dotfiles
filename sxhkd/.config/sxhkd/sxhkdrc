@@ -5,3 +5,7 @@ XF86MonBrightnessDown
 XF86MonBrightnessUp
 	sh -c "/run/current-system/sw/bin/light -A 10"
 	# sh -c "light -A 10"
+XF86AudioLowerVolume
+	volume_down
+XF86AudioRaiseVolume
+	volume_up

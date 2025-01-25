@@ -21,8 +21,5 @@ unclutter --timeout 1 &
 # start blueman-applet
 blueman-applet &
 
-# start volumeicon for traybar
-volumeicon &
-
 # start nm-applet
 nm-applet &
