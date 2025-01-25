@@ -33,7 +33,7 @@ blinking = "On"
 shape = "Block"
 
 [font]
-size = 7
+size = 12
 
 [font.bold]
 family = "Fira Code Nerd Font"
@@ -54,3 +54,7 @@ opacity = 0.85
 [window.padding]
 x = 2
 y = 4
+
+[env]
+WINIT_HIDPI_FACTOR = "1"
+WINIT_X11_SCALE_FACTOR = "1"

@@ -12,5 +12,11 @@ picom --config ~/.config/picom/picom.conf -b
 # start dunst
 dunst &
 
-# unclutter -- hide mousecursor if not needed
+# start nm-applet
+nm-applet &
+
+# hide mousecursor if not needed
 unclutter --timeout 1 &
+
+# start blueman-applet
+blueman-applet &
