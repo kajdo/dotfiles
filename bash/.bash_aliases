@@ -37,7 +37,7 @@ alias peer-o1='aider --model o1-mini --chat-language english --no-auto-commits -
 alias ai='chatblade -c mini'
 
 # some individual stuff
-alias clock='tty-clock -c'
+alias clock='tty-clock -c -C 4'
 
 # Tmux aliases
 alias nmux='tmux new -s'
