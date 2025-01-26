@@ -2,3 +2,6 @@
 
 cd || exit 1
 sudo cp -r /home/kajdo/git/nix-setup/nixos /etc
+
+# rebuild switch - because you just pulled in local changes ;)
+sudo nixos-rebuild switch
