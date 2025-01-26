@@ -1,0 +1,42 @@
+#!/usr/bin/env bash
+
+# Check if percentage should be shown (1 = show, 0 = don't show)
+# SHOW_PERCENT=${1:-0}
+SHOW_PERCENT=1
+
+# Get battery status using acpi
+battery_status=$(acpi -b)
+adapter_status=$(acpi -V | grep 'Adapter 0')
+
+# Get battery percentage
+battery_percent=$(echo $battery_status | grep -P -o '[0-9]+(?=%)')
+
+# Check if battery is charging
+if [[ $adapter_status == *"on-line"* ]]; then
+    if [ "$SHOW_PERCENT" -eq 1 ]; then
+        echo "󰂄 $battery_percent%"
+    else
+        echo "󰂄"
+    fi
+    exit 0
+fi
+
+# Determine icon based on battery level
+if ((battery_percent < 20)); then
+    icon=""
+elif ((battery_percent < 40)); then
+    icon=""
+elif ((battery_percent < 60)); then
+    icon=""
+elif ((battery_percent < 80)); then
+    icon=""
+else
+    icon=""
+fi
+
+# Output with or without percentage
+if [ "$SHOW_PERCENT" -eq 1 ]; then
+    echo "$icon $battery_percent%"
+else
+    echo "$icon"
+fi
