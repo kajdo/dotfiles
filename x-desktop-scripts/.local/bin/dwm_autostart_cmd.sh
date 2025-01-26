@@ -19,7 +19,7 @@ dunst &
 unclutter --timeout 1 &
 
 # start blueman-applet
-blueman-applet &
+# blueman-applet &
 
 # start nm-applet
 nm-applet &
