@@ -11,3 +11,6 @@ XF86AudioRaiseVolume
 	volume_up
 XF86AudioMute
 	volume_mute_toggle
+# search button opens rofi to connect bt device
+XF86Search
+	rofi_bluetooth.sh
