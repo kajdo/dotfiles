@@ -11,7 +11,8 @@ status=$(bluetoothctl info 2>&1)
 
 # Check if bluetooth is off
 if [[ $power_state != "yes" ]]; then
-    echo -e "\x1b[90m󰂲\x1b[0m"
+    # echo -e "󰂲"
+    echo -e "󰗿"
     exit 0
 fi
 
