@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+
+# Get bluetooth power state
+power_state=$(bluetoothctl show | grep -i "powered:" | awk '{print $2}')
+
+# Get bluetooth device info
+status=$(bluetoothctl info 2>&1)
+
+# icons used: https://www.nerdfonts.com/cheat-sheet
+# nf-md-bluetooth-xxx
+
+# Check if bluetooth is off
+if [[ $power_state != "yes" ]]; then
+    echo -e "\x1b[90m󰂲\x1b[0m"
+    exit 0
+fi
+
+# Check if any audio-headphones are connected
+if [[ $status == *"Icon: audio-headphones"* && $status == *"Connected: yes"* ]]; then
+    echo "󰋋"
+    exit 0
+fi
+
+# If bluetooth is on but no headphones connected
+echo "󰂯"

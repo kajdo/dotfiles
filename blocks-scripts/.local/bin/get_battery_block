@@ -22,16 +22,26 @@ if [[ $adapter_status == *"on-line"* ]]; then
 fi
 
 # Determine icon based on battery level
-if ((battery_percent < 20)); then
-    icon=""
+if ((battery_percent < 10)); then
+    icon="󰁺"
+elif ((battery_percent < 20)); then
+    icon="󰁻"
+elif ((battery_percent < 30)); then
+    icon="󰁼"
 elif ((battery_percent < 40)); then
-    icon=""
+    icon="󰁽"
+elif ((battery_percent < 50)); then
+    icon="󰁾"
 elif ((battery_percent < 60)); then
-    icon=""
+    icon="󰁿"
+elif ((battery_percent < 70)); then
+    icon="󰂀"
 elif ((battery_percent < 80)); then
-    icon=""
+    icon="󰂁"
+elif ((battery_percent < 90)); then
+    icon="󰂂"
 else
-    icon=""
+    icon="󰁹"
 fi
 
 # Output with or without percentage

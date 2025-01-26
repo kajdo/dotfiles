@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+
+# Get the status of the default audio sink
+status=$(wpctl get-volume @DEFAULT_AUDIO_SINK@)
+
+# icons used: https://www.nerdfonts.com/cheat-sheet
+# nf-md-volume-xxx
+
+# Check if muted
+if [[ $status == *"MUTED"* ]]; then
+    echo "󰖁"
+    exit 0
+fi
+
+# Get the current volume level
+volume=$(wpctl get-volume @DEFAULT_AUDIO_SINK@ | awk '{print int($2 * 100)}')
+
+# Determine icon based on volume level
+if ((volume < 50)); then
+    echo "󰕿"
+elif ((volume < 70)); then
+    echo "󰖀"
+else
+    echo "󰕾"
+fi
