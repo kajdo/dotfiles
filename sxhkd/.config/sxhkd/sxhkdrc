@@ -9,3 +9,5 @@ XF86AudioLowerVolume
 	volume_down
 XF86AudioRaiseVolume
 	volume_up
+XF86AudioMute
+	volume_mute_toggle
