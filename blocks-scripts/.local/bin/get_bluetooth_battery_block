@@ -1,0 +1,65 @@
+#!/usr/bin/env bash
+
+# Configuration: List of device name substrings to monitor
+DEVICE_NAMES=("Buds" "Earbuds")
+
+# Check if percentage should be shown (1 = show, 0 = don't show)
+SHOW_PERCENT=${1:-1}
+# Check if icons should be shown (1 = show, 0 = don't show)
+SHOW_ICONS=${2:-0}
+
+# Get connected Bluetooth devices
+connected_devices=$(bluetoothctl devices Connected)
+
+# Find the first matching device
+for device in "${DEVICE_NAMES[@]}"; do
+    device_info=$(echo "$connected_devices" | grep -i "$device")
+    if [ -n "$device_info" ]; then
+        mac=$(echo "$device_info" | awk '{print $2}')
+        battery_percent=$(bluetoothctl info "$mac" | grep "Battery Percentage" | awk -F '[()]' '{print $2}' | tr -d '%')
+        break
+    fi
+done
+
+# If no battery percentage found, exit
+if [ -z "$battery_percent" ]; then
+    exit 0
+fi
+
+# Determine icon based on battery level
+if ((battery_percent < 10)); then
+    icon="󰤾"
+elif ((battery_percent < 20)); then
+    icon="󰤿"
+elif ((battery_percent < 30)); then
+    icon="󰥀"
+elif ((battery_percent < 40)); then
+    icon="󰥁"
+elif ((battery_percent < 50)); then
+    icon="󰥂"
+elif ((battery_percent < 60)); then
+    icon="󰥃"
+elif ((battery_percent < 70)); then
+    icon="󰥄"
+elif ((battery_percent < 80)); then
+    icon="󰥅"
+elif ((battery_percent < 90)); then
+    icon="󰥆"
+else
+    icon="󰥈"
+fi
+
+# Output with or without percentage and icons
+if [ "$SHOW_ICONS" -eq 1 ]; then
+    if [ "$SHOW_PERCENT" -eq 1 ]; then
+        echo "$icon $battery_percent%"
+    else
+        echo "$icon"
+    fi
+else
+    if [ "$SHOW_PERCENT" -eq 1 ]; then
+        echo "$battery_percent%"
+    else
+        echo ""
+    fi
+fi
