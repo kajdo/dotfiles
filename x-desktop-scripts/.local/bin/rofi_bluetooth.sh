@@ -12,4 +12,5 @@ mac=$(echo "$selected" | grep -oP '(?<=\[)[^]]+(?=\])')
 # If a device was selected, connect to it
 if [[ -n "$mac" ]]; then
     bluetoothctl connect "$mac"
+    notify-send "Bluetooth Connected" "Device $selected connected"
 fi

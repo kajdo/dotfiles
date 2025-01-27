@@ -17,7 +17,7 @@ if [[ $power_state != "yes" ]]; then
 fi
 
 # Check if any audio-headphones are connected
-if [[ $status == *"Icon: audio-headphones"* && $status == *"Connected: yes"* ]]; then
+if [[ $status == *"Icon: audio-head"* && $status == *"Connected: yes"* ]]; then
     echo "󰋋"
     exit 0
 fi
