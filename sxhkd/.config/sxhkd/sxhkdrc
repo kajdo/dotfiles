@@ -14,6 +14,8 @@ XF86AudioMute
 # search button opens rofi to connect bt device
 XF86Search
 	rofi_bluetooth.sh
+XF86LaunchA
+	rofi_bluetooth_info.sh
 # Lockscreen
 super + l
 	betterlockscreen -l

@@ -1,7 +1,14 @@
 #!/usr/bin/env bash
 
-# Get connected Bluetooth devices
-connected_devices=$(bluetoothctl devices Connected | awk '{name=""; for(i=3;i<=NF;i++) name=name" "$i; print name " [" $2 "]"}')
+# Get connected Bluetooth devices with battery levels
+connected_devices=$(bluetoothctl devices Connected | while read -r _ mac name; do
+    battery_level=$(bluetoothctl info "$mac" | grep "Battery Percentage" | awk -F '[()]' '{print $2}')
+    if [[ -n "$battery_level" ]]; then
+        echo "$name $battery_level%"
+    else
+        echo "$name"
+    fi
+done)
 
 # If no devices are connected, show a notification and exit
 if [[ -z "$connected_devices" ]]; then
@@ -12,12 +19,19 @@ fi
 # Show rofi menu and get selected device
 selected=$(echo "$connected_devices" | rofi -dmenu -i -p "Select Bluetooth Device")
 
-# Extract MAC address from selection (remove brackets and spaces)
-mac=$(echo "$selected" | grep -oP '(?<=\[)[^]]+(?=\])')
+echo "selected: $selected"
+
+# Extract device name by removing battery percentage
+device_name=$(echo "$selected" | sed 's/ [0-9]\+%$//')
+echo "Device name: $device_name"
+
+# Extract MAC address using grep and awk
+mac=$(bluetoothctl devices Connected | grep "$device_name" | awk '{print $2}')
 echo "mac selected: $mac"
 
-# If a device was selected, handle profile selection
+# If a device was selected, handle profile selection and battery level
 if [[ -n "$mac" ]]; then
+
     # Get available profiles between Profile: and Aktives Profil
     profiles=$(pactl list cards | awk -v mac="$mac" '
         /bluez5.address = "'"$mac"'"/ {start=1}
@@ -48,7 +62,7 @@ if [[ -n "$mac" ]]; then
 
     # Get the Bluetooth sink name
     bluetooth_sink=$(pactl list cards short | grep "bluez" | awk '{print $1}')
-    
+
     # If a different profile was selected, switch to it
     if [[ -n "$selected_profile" && "$selected_profile" != "$current_profile" ]]; then
         pactl set-card-profile "$bluetooth_sink" "$selected_profile"
