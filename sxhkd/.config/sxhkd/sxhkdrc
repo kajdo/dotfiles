@@ -16,6 +16,8 @@ XF86Search
 	rofi_bluetooth.sh
 XF86LaunchA
 	rofi_bluetooth_info.sh
+XF86Explorer
+	sus
 # Lockscreen
 super + l
 	betterlockscreen -l

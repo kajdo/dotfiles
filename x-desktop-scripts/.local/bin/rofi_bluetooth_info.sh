@@ -63,6 +63,7 @@ if [[ -n "$mac" ]]; then
     # Get the Bluetooth sink name
     bluetooth_sink=$(pactl list cards short | grep "bluez" | awk '{print $1}')
 
+    echo "Bluetooth_sink: $bluetooth_sink selected_profile: $selected_profile"
     # If a different profile was selected, switch to it
     if [[ -n "$selected_profile" && "$selected_profile" != "$current_profile" ]]; then
         pactl set-card-profile "$bluetooth_sink" "$selected_profile"
