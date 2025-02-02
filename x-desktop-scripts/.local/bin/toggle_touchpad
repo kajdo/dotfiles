@@ -3,7 +3,7 @@
 # script to toggle touchpad on laptop - will be called via sxhkd
 # disables input when enabled, enables it when disabled
 
-TOUCHPAD_ID=$(xinput list | grep -i "touchpad" | grep -o 'id=[0-9]*' | cut -d= -f2)
+TOUCHPAD_ID=$(xinput list | grep -i "pointer" | grep -o 'id=[0-9]*' | cut -d= -f2)
 if [ -z "$TOUCHPAD_ID" ]; then
   echo "Touchpad not found!"
   exit 1
