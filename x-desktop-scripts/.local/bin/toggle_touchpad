@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+# script to toggle touchpad on laptop - will be called via sxhkd
+# disables input when enabled, enables it when disabled
