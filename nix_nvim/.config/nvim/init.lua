@@ -655,7 +655,7 @@ require("lazy").setup({
 					{ name = "luasnip" },
 					{ name = "path" },
 				},
-				-- cmp setup kajdo
+				-- cmp setup kajo
 				-- setuup vim-dadbod
 				cmp.setup.filetype({ "sql", "mysql" }, {
 					sources = {

@@ -73,6 +73,7 @@ end
 -- Define the key mappings and return them
 -- Key mappings for quick access
 vim.keymap.set("i", "jk", "<Esc>", { desc = "jk to escape from insert mode" })
+vim.keymap.set("i", "kj", "<Esc>", { desc = "kj to escape from insert mode" })
 vim.keymap.set("n", "<leader>lc", ":e $MYVIMRC<CR>", { desc = "open configuration file" })
 vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>", { desc = "toggle explorer" })
 
