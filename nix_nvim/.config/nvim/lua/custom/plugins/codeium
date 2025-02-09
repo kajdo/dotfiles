@@ -1,0 +1,56 @@
+return {
+	"Exafunction/codeium.nvim",
+	dependencies = {
+		"nvim-lua/plenary.nvim",
+		"hrsh7th/nvim-cmp",
+	},
+	config = function()
+		-- Setup Codeium with NixOS path configuration
+		require("codeium").setup({
+			-- For NixOS compatibility
+			bin_path = vim.env.HOME .. "/.codeium/codeium_chromium",
+
+			-- URL parameters need to be set explicitly for some NixOS configurations
+			api = {
+				host = "0.0.0.0", -- Explicitly setting host for NixOS firewall compatibility
+				port = 50001,
+			},
+		})
+
+		-- Configure nvim-cmp integration
+		local cmp = require("cmp")
+		cmp.setup({
+			sources = cmp.config.sources({
+				{ name = "codeium", group_index = 2, priority = 100 },
+				-- Add other sources here (keep the comma if adding more)
+				-- { name = "nvim_lsp" },
+				-- { name = "luasnip" },
+			}),
+		})
+
+		-- Configure logging
+		vim.g.codeium_log_file = vim.env.HOME .. "/.codeium/codeium.log"
+
+		-- Key mappings
+		local keymap = vim.keymap.set
+		keymap("i", "<C-g>", function()
+			return vim.fn["codeium#Accept"]()
+		end, { expr = true, silent = true })
+		keymap("i", "<c-;>", function()
+			return vim.fn["codeium#CycleCompletions"](1)
+		end, { expr = true, silent = true })
+		keymap("i", "<c-,>", function()
+			return vim.fn["codeium#CycleCompletions"](-1)
+		end, { expr = true, silent = true })
+		keymap("i", "<c-x>", function()
+			return vim.fn["codeium#Clear"]()
+		end, { expr = true, silent = true })
+
+		-- Status check command
+		vim.api.nvim_create_user_command("CodeiumStatus", function()
+			local status, server_status = require("codeium").get_status()
+			print("Codeium status:", status)
+			print("Server status:", server_status)
+		end, {})
+	end,
+}

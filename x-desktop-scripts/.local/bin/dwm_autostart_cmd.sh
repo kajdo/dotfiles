@@ -23,3 +23,6 @@ unclutter --timeout 1 &
 
 # start nm-applet
 nm-applet &
+
+# clipboard manager
+clipit &
