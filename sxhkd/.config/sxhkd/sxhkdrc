@@ -21,3 +21,6 @@ XF86Explorer
 # Lockscreen
 super + l
 	betterlockscreen -l
+# toggle touchpad
+super + m
+	toggle_touchpad
