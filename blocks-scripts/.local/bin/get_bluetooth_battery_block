@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Configuration: List of device name substrings to monitor
-DEVICE_NAMES=("Buds" "Earbuds")
+DEVICE_NAMES=("Buds" "Earbuds" "Jabra")
 
 # Check if percentage should be shown (1 = show, 0 = don't show)
 SHOW_PERCENT=${1:-1}
