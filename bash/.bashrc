@@ -98,6 +98,11 @@ if [ -f ~/.bash_aliases ]; then
 	. ~/.bash_aliases
 fi
 
+# aliases not ment for dotfiles
+if [ -f ~/.aliases ]; then
+	. ~/.aliases
+fi
+
 if [ -f ~/.cred ]; then
 	. ~/.cred
 fi
