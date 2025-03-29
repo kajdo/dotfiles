@@ -572,7 +572,7 @@ require("lazy").setup({
 				}),
 				sources = cmp.config.sources({
 					-- Give Supermaven high priority
-					{ name = "supermaven", group_index = 1, priority = 100 },
+					-- { name = "supermaven", group_index = 1, priority = 100 },
 
 					{ name = "nvim_lsp", group_index = 1 },
 					{ name = "luasnip", group_index = 2 },
