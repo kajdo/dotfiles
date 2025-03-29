@@ -130,6 +130,7 @@ export PATH="$HOME/.cargo/bin:$PATH"
 
 # Created by `pipx` on 2024-08-10 19:30:33
 export PATH="$PATH:$HOME/.local/bin"
+export _ZO_DOCTOR=0
 
 ### additional nice stuff ###
 eval "$(zoxide init bash)"
