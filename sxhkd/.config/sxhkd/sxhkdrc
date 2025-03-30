@@ -1,10 +1,8 @@
 # Brightnes control
 XF86MonBrightnessDown
 	brightness_down
-	# sh -c "/run/current-system/sw/bin/light -U 10"
 XF86MonBrightnessUp
 	brightness_up
-	# sh -c "/run/current-system/sw/bin/light -A 10"
 XF86AudioLowerVolume
 	volume_down
 XF86AudioRaiseVolume
