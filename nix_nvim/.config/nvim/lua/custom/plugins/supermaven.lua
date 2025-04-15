@@ -1,6 +1,7 @@
 -- ~/.config/nvim/lua/custom/plugins/supermaven.lua
 return {
 	"supermaven-inc/supermaven-nvim",
+	enabled = false,
 	-- Load it reasonably early, but maybe after cmp if you prefer strict ordering
 	-- Or just use lazy loading triggered by entering a buffer
 	event = "BufEnter",
