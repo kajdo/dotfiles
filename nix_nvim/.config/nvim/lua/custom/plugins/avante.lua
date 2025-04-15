@@ -31,7 +31,7 @@ return {
 		-- },
 	},
 	-- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
-	build = "make BUILD_FROM_SOURCE=true", -- for linux
+	build = "make BUILD_FROM_SOURCE=false", -- for linux
 	build_opts = {
 		timeout = 600, -- Increase the timeout to 600 seconds (10 minutes) or more
 	},
