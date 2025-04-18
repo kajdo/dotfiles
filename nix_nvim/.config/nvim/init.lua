@@ -336,8 +336,10 @@ require("lazy").setup({
 				cmd = { "vscode-eslint-language-server", "--stdio" },
 			})
 
-			-- Add more LSPs as needed
+			-- kajdo - virtual text will be done via plugin (https://github.com/rachartier/tiny-inline-diagnostic.nvim)
+			vim.diagnostic.config({ virtual_text = false })
 
+			-- Add more LSPs as needed
 			--  This function gets run when an LSP attaches to a particular buffer.
 			--    That is to say, every time a new file is opened that is associated with
 			--    an lsp (for example, opening `main.rs` is associated with `rust_analyzer`) this
@@ -595,8 +597,6 @@ require("lazy").setup({
 				}),
 			})
 			-- >>>>>>>>>>>>>> END OF FILETYPE SETUP <<<<<<<<<<<<<<<<<<<
-
-			print("nvim-cmp configured with supermaven.") -- Optional confirmation
 		end, -- <----------- END OF THE CONFIG FUNCTION FOR NVIM-CMP
 		-- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 	}, -- <------------- END OF NVIM-CMP PLUGIN DEFINITION
