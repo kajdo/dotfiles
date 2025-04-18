@@ -1,5 +1,5 @@
 {
-    "vscode_custom_css.imports": ["file:///C:/xxx/xxx/AppData/Roaming/Code/User/custom.css"], // C:\Users\s5213\AppData\Roaming\Code\User
+    "vscode_custom_css.imports": ["file:///C:/xxx/xxx/AppData/Roaming/Code/User/custom.css"], // C:\xxx\xxx\AppData\Roaming\Code\User
     "vim.leader": "<Space>",
     "vim.insertModeKeyBindingsNonRecursive": [
         //get out of insert mode
