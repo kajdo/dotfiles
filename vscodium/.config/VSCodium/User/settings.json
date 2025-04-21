@@ -14,7 +14,7 @@
     "editor.stickyScroll.enabled": false,
     // "window.menuBarVisibility": "toggle",
     "workbench.activityBar.location": "hidden",
-    "workbench.colorTheme": "Bearded Theme Arc Blueberry",
+    "workbench.colorTheme": "Bearded Theme Black & Diamond",
     "terminal.explorerKind": "external",
     // from Monsterlesson Academy
     "git.decorations.enabled": false,
@@ -63,4 +63,12 @@
     "window.menuBarVisibility": "toggle",
     "symbols.hidesExplorerArrows": false,
     "workbench.iconTheme": "material-icon-theme",
+    "roo-cline.allowedCommands": [
+        "npm test",
+        "npm install",
+        "tsc",
+        "git log",
+        "git diff",
+        "git show"
+    ],
 }
