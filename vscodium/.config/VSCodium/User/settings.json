@@ -1,0 +1,66 @@
+{
+    "vim.leader": "<Space>",
+    "vim.useSystemClipboard": true,
+    "vim.insertModeKeyBindingsNonRecursive": [
+        //get out of insert mode
+        {"before": ["j","k"], "after": ["<Esc>"]},
+    ],
+    "vim.visualModeKeyBindingsNonRecursive": [
+        //get out of visual mode
+        {"before": ["j","k"], "commands": ["extension.vim_escape"]},
+        // comment / uncomment
+        {"before": ["leader", "l", "c"], "commands": ["editor.action.commentLine", "extension.vim_escape"]},
+    ],
+    "editor.stickyScroll.enabled": false,
+    // "window.menuBarVisibility": "toggle",
+    "workbench.activityBar.location": "hidden",
+    "workbench.colorTheme": "Bearded Theme Arc Blueberry",
+    "terminal.explorerKind": "external",
+    // from Monsterlesson Academy
+    "git.decorations.enabled": false,
+    "editor.scrollbar.horizontal": "hidden",
+    "editor.scrollbar.vertical": "hidden",
+    "editor.minimap.enabled": false,
+    // minimal view
+    "editor.showFoldingControls": "never",
+    "editor.glyphMargin": false, //margin left to the line number
+    "editor.folding": false,
+    // minimal view
+    "workbench.layoutControl.enabled": false,
+    "window.title": " ",
+    "editor.cursorSmoothCaretAnimation": "on",
+    "window.commandCenter": false,
+    "scm.diffDecorationsGutterPattern": {
+        "added": false,
+        "modified": false
+      },
+    "scm.diffDecorations": "none",
+    "scm.diffDecorationsGutterAction": "none",
+    "editor.lightbulb.enabled": "off",
+    "explorer.confirmDelete": false,
+    "editor.wordWrap": "on",
+    "editor.fontFamily": "FiraCode Nerd Font Mono",
+    "editor.codeLensFontFamily": "FiraCode Nerd Font Mono",
+    "editor.inlayHints.fontFamily": "FiraCode Nerd Font Mono",
+    "debug.console.fontFamily": "FiraCode Nerd Font Mono",
+    "scm.inputFontFamily": "FiraCode Nerd Font Mono",
+    "terminal.integrated.fontFamily": "FiraCode Nerd Font Mono",
+    "breadcrumbs.enabled": false,
+    "chat.commandCenter.enabled": false,
+    "workbench.editor.editorActionsLocation": "hidden",
+    "terminal.integrated.shellIntegration.decorationsEnabled": "never",
+    "accessibility.verbosity.terminal": false,
+    "terminal.integrated.cursorBlinking": true,
+    "terminal.integrated.customGlyphs": false,
+    "terminal.integrated.defaultProfile.linux": "bash",
+    "terminal.integrated.shellIntegration.showCommandGuide": false,
+    "terminal.integrated.showExitAlert": false,
+    "terminal.integrated.suggest.inlineSuggestion": "off",
+    "window.titleBarStyle": "native",
+    "[jsonc]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "window.menuBarVisibility": "toggle",
+    "symbols.hidesExplorerArrows": false,
+    "workbench.iconTheme": "material-icon-theme",
+}
