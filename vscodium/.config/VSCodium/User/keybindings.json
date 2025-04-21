@@ -172,17 +172,17 @@
     "command": "explorer.openToSide",
     "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceIsReadonly && !inputFocus"
   },
-  {
-    "key": "l",
-    "command": "explorer.openAndPassFocus",
-    "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceIsReadonly && !inputFocus"
-  },
-  {
-    "key": "h",
-    "command": "explorer.openAndPassFocus",
-    "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceIsReadonly && !inputFocus"
-  },
-  // *** not working for some reason ***
+  // {
+  //   "key": "l",
+  //   "command": "explorer.openAndPassFocus",
+  //   "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceIsReadonly && !inputFocus"
+  // },
+  // {
+  //   "key": "h",
+  //   "command": "explorer.openAndPassFocus",
+  //   "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceIsReadonly && !inputFocus"
+  // },
+  // // *** not working for some reason ***
   {
     "key": "shift-s",
     "command": "runCommands",
