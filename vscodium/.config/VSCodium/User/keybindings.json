@@ -72,6 +72,11 @@
   },
   // Coding
   {
+    "key": "space f",
+    "command": "editor.action.formatDocument",
+    "when": "vim.mode == 'Normal' && editorTextFocus"
+  },
+  {
     "key": "shift-j",
     "command": "editor.action.moveLinesDownAction",
     "when": "vim.mode != 'Insert' && editorTextFocus"
@@ -141,17 +146,17 @@
     "key": "c",
     "command": "filesExplorer.copy",
     "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceIsReadonly && !inputFocus"
-  } ,
+  },
   {
     "key": "p",
     "command": "filesExplorer.paste",
     "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceIsReadonly && !inputFocus"
-  } ,
+  },
   {
     "key": "x",
     "command": "filesExplorer.cut",
     "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceIsReadonly && !inputFocus"
-  } ,
+  },
   {
     "key": "d",
     "command": "deleteFile",
@@ -172,17 +177,6 @@
     "command": "explorer.openToSide",
     "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceIsReadonly && !inputFocus"
   },
-  // {
-  //   "key": "l",
-  //   "command": "explorer.openAndPassFocus",
-  //   "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceIsReadonly && !inputFocus"
-  // },
-  // {
-  //   "key": "h",
-  //   "command": "explorer.openAndPassFocus",
-  //   "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceIsReadonly && !inputFocus"
-  // },
-  // // *** not working for some reason ***
   {
     "key": "shift-s",
     "command": "runCommands",
@@ -192,6 +186,31 @@
         "workbench.action.splitEditorDown",
         "explorer.openAndPassFocus",
         "workbench.action.closeOtherEditors"
+      ]
+    }
+  },
+  {
+    "key": "space s r",
+    "command": "runCommands",
+    "when": "vim.mode == 'Normal' && editorTextFocus",
+    "args": {
+      "commands": [
+        "workbench.action.toggleAuxiliaryBar",
+        "roo-cline.focusInput",
+        "toggleVim"
+      ]
+    }
+  },
+  {
+    // "key": "space s r",
+    "key": "j k",
+    "when": "auxiliaryBarVisible && !vim.active && !editorTextFocus",
+    "command": "runCommands",
+    "args": {
+      "commands": [
+        "workbench.action.toggleAuxiliaryBar",
+        "toggleVim",
+        "extension.vim_escape"
       ]
     }
   }
