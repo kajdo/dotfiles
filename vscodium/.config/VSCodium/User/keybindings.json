@@ -32,7 +32,7 @@
         "workbench.files.action.focusFilesExplorer"
       ]
     },
-    "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus) && !sideBarFocus"
+    "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus) && !sideBarFocus && !auxiliaryBarVisible"
   },
   {
     "key": "space e",
@@ -43,11 +43,11 @@
         "workbench.action.focusActiveEditorGroup"
       ]
     },
-    "when": "sideBarFocus && !inputFocus"
+    "when": "sideBarFocus && !inputFocus && !auxiliaryBarVisible"
   },
   {
     "key": "space e",
-    "when": "vim.mode == 'Normal' && editorTextFocus && foldersViewVisible",
+    "when": "vim.mode == 'Normal' && editorTextFocus && foldersViewVisible && !auxiliaryBarVisible",
     "command": "workbench.action.toggleSidebarVisibility"
   },
   {
