@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+# Check if a file path is provided as the first argument
+if [ -z "$1" ]; then
+  echo "Usage: $0 <file_path>"
+  exit 1
+fi
+
+# Check if the provided file exists
+if [ ! -f "$1" ]; then
+  echo "Error: File not found: $1"
+  exit 1
+fi
+
+# Cat the content of the file and pipe it to xclip
+xclip -selection clipboard <"$1"
+
+echo "Content of '$1' copied to clipboard."
+
+exit 0
