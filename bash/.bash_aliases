@@ -31,7 +31,7 @@ alias governors='cat /sys/devices/system/cpu/cpu*/cpufreq/scaling_available_gove
 # development & ai fun
 alias gg='lazygit'
 alias py='python -c "import sys; print(eval(sys.argv[1]))"'
-alias peer='aider --model openrouter/deepseek/deepseek-chat-v3-0324 --chat-language english --no-auto-commits --subtree-only --no-suggest-shell-commands'
+alias peer='aider --model openrouter/deepseek/deepseek-chat-v3-0324 --chat-language english --no-auto-commits --subtree-only --no-suggest-shell-commands --dark-mode'
 # alias peer='aider --model openrouter/anthropic/claude-3.7-sonnet --chat-language english --no-auto-commits --subtree-only --no-suggest-shell-commands'
 # alias peer='aider --model openrouter/deepseek/deepseek-r1 --chat-language english --no-auto-commits --subtree-only --no-suggest-shell-commands'
 # alias peer='aider --model openrouter/deepseek/deepseek-chat --chat-language english --no-auto-commits --subtree-only --no-suggest-shell-commands'
