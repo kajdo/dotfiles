@@ -22,5 +22,6 @@ git pull origin $MAIN_BRANCH
 
 # Create a new feature branch from the updated main branch
 git checkout -b "$BRANCH_NAME"
+git push --set-upstream origin "$BRANCH_NAME"
 
 echo "Feature branch '$BRANCH_NAME' created based on the latest '$MAIN_BRANCH' branch."

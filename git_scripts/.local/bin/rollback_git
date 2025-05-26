@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+git reset --hard HEAD
+git clean -fd # Or git clean -fdx if you want to remove ignored files too
+echo "Reset to last commit done ..."
