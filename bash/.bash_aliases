@@ -31,7 +31,7 @@ alias governors='cat /sys/devices/system/cpu/cpu*/cpufreq/scaling_available_gove
 # development & ai fun
 alias gg='lazygit'
 alias py='python -c "import sys; print(eval(sys.argv[1]))"'
-alias peer='aider --model openrouter/google/gemini-2.5-flash-preview:thinking --chat-language english --no-auto-commits --subtree-only --no-suggest-shell-commands --dark-mode --no-show-model-warnings --lint-cmd flake8 --no-auto-lint'
+alias peer='aider --model openrouter/google/gemini-2.5-flash-preview:thinking --chat-language english --no-auto-commits --subtree-only --no-suggest-shell-commands --dark-mode --no-show-model-warnings --lint-cmd flake8 --no-auto-lint --cache-prompts'
 alias peergoogle='aider --model openrouter/google/gemini-2.0-flash-exp:free  --chat-language english --no-auto-commits --subtree-only --no-suggest-shell-commands'
 alias peerchat='aider --model openrouter/deepseek/deepseek-chat --chat-language english --no-suggest-shell-commands --llm-history-file ~/tmp/.aider.llm.history --chat-history-file ~/tmp/.aider.chat.history.md --input-history-file ~/tmp/.aider.input.history --no-show-model-warnings'
 alias peer-or='aider --model openrouter/deepseek/deepseek-chat --chat-language english --no-auto-commits --subtree-only'

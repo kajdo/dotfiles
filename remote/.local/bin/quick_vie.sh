@@ -9,4 +9,4 @@ FPS="60"        # Desired FPS
 BITRATE="20000" # Desired bitrate in kbps -- try 8000, 16000, 32000
 
 # Start the Moonlight-Qt connection with settings
-moonlight stream "$SERVER_IP" "$APP_NAME" -fps "$FPS" -bitrate "$BITRATE" --1080
+moonlight stream "$SERVER_IP" "$APP_NAME" -fps "$FPS" -bitrate "$BITRATE" --1080 --display HDMI-2
