@@ -281,6 +281,16 @@ if $SELECT_FORMAT; then # User explicitly requested format selection via Rofi
             else
                 DETERMINED_FORMAT_ID=$(echo "$SELECTED_LINE" | awk '{print $1}')
                 echo "Selected format ID via Rofi: $DETERMINED_FORMAT_ID"
+
+                # --- AUTO-APPEND +bestaudio if YouTube/Vimeo and format is numeric ---
+                if [[ "$STREAM_URL" =~ ^https?://(www\.)?(youtube\.com|youtu\.be|vimeo\.com)/ ]] && [[ "$DETERMINED_FORMAT_ID" =~ ^[0-9]+$ ]]; then
+                    # Let's check if this numeric ID is "video only" in the format list
+                    if echo "$YTDLP_FORMATS_OUTPUT" | grep -E "^$DETERMINED_FORMAT_ID\s" | grep -iq 'video only'; then
+                        echo "Numeric video-only format selected ($DETERMINED_FORMAT_ID) for YouTube. Appending +bestaudio so you'll get video and audio."
+                        DETERMINED_FORMAT_ID="${DETERMINED_FORMAT_ID}+bestaudio"
+                    fi
+                fi
+
             fi
         fi
 
@@ -312,6 +322,15 @@ if $SELECT_FORMAT; then # User explicitly requested format selection via Rofi
             else
                 DETERMINED_FORMAT_ID=$(echo "$SELECTED_LINE" | awk '{print $1}')
                 echo "Selected format ID via Rofi: $DETERMINED_FORMAT_ID"
+
+                # --- AUTO-APPEND +bestaudio if YouTube/Vimeo and format is numeric ---
+                if [[ "$STREAM_URL" =~ ^https?://(www\.)?(youtube\.com|youtu\.be|vimeo\.com)/ ]] && [[ "$DETERMINED_FORMAT_ID" =~ ^[0-9]+$ ]]; then
+                    # Let's check if this numeric ID is "video only" in the format list
+                    if echo "$YTDLP_FORMATS_OUTPUT" | grep -E "^$DETERMINED_FORMAT_ID\s" | grep -iq 'video only'; then
+                        echo "Numeric video-only format selected ($DETERMINED_FORMAT_ID) for YouTube. Appending +bestaudio so you'll get video and audio."
+                        DETERMINED_FORMAT_ID="${DETERMINED_FORMAT_ID}+bestaudio"
+                    fi
+                fi
             fi
         fi
     fi
