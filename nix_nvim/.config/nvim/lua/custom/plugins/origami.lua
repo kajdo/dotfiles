@@ -10,10 +10,10 @@ return {
 	init = function()
 		vim.opt.foldlevel = 99
 		vim.opt.foldlevelstart = 99
-		vim.keymap.set("n", "<C-h>", function()
+		vim.keymap.set("n", "<C-a>", function()
 			require("origami").h()
 		end)
-		vim.keymap.set("n", "<C-l>", function()
+		vim.keymap.set("n", "<C-s>", function()
 			require("origami").l()
 		end)
 	end,
