@@ -9,7 +9,7 @@
 # --- Configuration Variables ---
 # Minimum video resolution to prefer (e.g., 720 for 720p). Set to 0 to disable this feature.
 # The script will now select the *lowest* resolution that meets or exceeds MIN_RESOLUTION.
-MIN_RESOLUTION=720 # Set to 0 to disable minimum resolution preference
+MIN_RESOLUTION=1080 # Set to 0 to disable minimum resolution preference
 
 # Define common yt-dlp options, including cookies
 YTDLP_COMMON_OPTIONS="--cookies-from-browser vivaldi"
