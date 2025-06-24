@@ -9,8 +9,9 @@ SCRATCHPAD_WM_CLASS="KittyScratchpad"
 # Define the window title. This will be visible in your window list.
 SCRATCHPAD_TITLE="Kitty Scratchpad"
 # Define the desired dimensions for the scratchpad window.
-# Format: "WIDTHxHEIGHT" where WIDTH is columns and HEIGHT is lines.
-SCRATCHPAD_DIMENSIONS="150x45" # 150 columns by 45 lines
+# Use 'c' for columns (cells) or omit for pixels.
+SCRATCHPAD_WIDTH="150c" # 150 columns wide
+SCRATCHPAD_HEIGHT="45c" # 45 lines high
 
 # --- Launch Logic ---
 echo "Launching Kitty Scratchpad..."
@@ -18,9 +19,13 @@ echo "Launching Kitty Scratchpad..."
 # Launch a new Kitty window with the specified characteristics:
 # --name: Sets the WM_NAME property of the window, often used by window managers.
 # --class: Sets the WM_CLASS property, which is crucial for DWM window rules.
-# -o "dimensions=WIDTHxHEIGHT": Overrides the window dimensions for this instance.
+# -o "initial_window_width=WIDTH": Overrides the initial window width.
+# -o "initial_window_height=HEIGHT": Overrides the initial window height.
+# -o "remember_window_size=no": Crucial! This tells Kitty NOT to use the previously remembered size.
 # -e: Executes the specified command ('tmux new -As scratch') inside the new terminal.
 kitty --name "$SCRATCHPAD_TITLE" \
     --class "$SCRATCHPAD_WM_CLASS" \
-    -o "dimensions=$SCRATCHPAD_DIMENSIONS" \
+    -o "initial_window_width=$SCRATCHPAD_WIDTH" \
+    -o "initial_window_height=$SCRATCHPAD_HEIGHT" \
+    -o "remember_window_size=no" \
     -e tmux new -As scratch
