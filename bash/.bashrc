@@ -122,6 +122,24 @@ if ! shopt -oq posix; then
 	fi
 fi
 
+# individual functions
+# Fuzzy search with ripgrep and open in editor
+# Usage: gg <search_term>
+gg() {
+	if [ -z "$1" ]; then
+		echo "Usage: rgf <search_term>"
+		return 1
+	fi
+
+	rg --line-number --no-heading --color=always -i -w --hidden "$1" . |
+		fzf --ansi \
+			--delimiter ':' \
+			--preview 'bat --style=numbers --color=always --highlight-line {2} {1}' \
+			--preview-window 'up,60%,border-bottom' \
+			--bind 'enter:execute(eval exec ${EDITOR:-vim} +{2} {1})' \
+			--bind 'ctrl-c:abort'
+}
+
 # add individual pathes
 export PATH="/usr/local/bin:$PATH"
 export PATH="$PATH:/home/kajdo/git/custom_scripts/remote_computing/.local/bin"
