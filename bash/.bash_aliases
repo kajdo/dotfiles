@@ -9,7 +9,7 @@ alias linutil='curl -fsSL https://christitus.com/linuxdev | sh'
 alias fin='cd /home/kajdo/git/aktienator/ && ./nix_start'
 alias chat='mv $HOME/git/opencode/packages/opencode/src/session/prompt/anthropic.txt.bak $HOME/git/opencode/packages/opencode/src/session/prompt/anthropic.txt && nix develop /home/kajdo/git/opencode --command bun run /home/kajdo/git/opencode/packages/opencode/src/index.ts'
 alias sysprompt='$HOME/git/prompts/set-sysprompt'
-alias opencode='nix develop /path/to/your/opencode --command bun run /path/to/your/opencode/packages/opencode/src/index.ts'
+alias lopencode='nix develop /path/to/your/opencode --command bun run /path/to/your/opencode/packages/opencode/src/index.ts'
 
 alias wifi-list='nmcli d wifi list'
 alias docker-ip='sudo docker inspect -f "{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}"'

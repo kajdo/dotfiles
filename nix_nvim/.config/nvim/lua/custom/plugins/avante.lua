@@ -8,7 +8,8 @@ return {
 	version = false, -- Never set this value to "*"! Never!
 	opts = {
 		provider = "openrouter",
-		vendors = {
+		-- vendors = {
+		providers = {
 			openrouter = {
 				__inherited_from = "openai",
 				disable_tools = true,
