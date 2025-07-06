@@ -5,6 +5,7 @@
 return {
 	"yetone/avante.nvim",
 	event = "VeryLazy",
+	enabled = false,
 	version = false, -- Never set this value to "*"! Never!
 	opts = {
 		provider = "openrouter",
