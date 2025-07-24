@@ -1,26 +1,5 @@
 #!/usr/bin/env bash
 
-#### Mouse tango to open on active screen #####
-# Get the ID of the currently active window
-ACTIVE_WINDOW_ID=$(xdotool getactivewindow)
-
-# Get the geometry of the active window
-# This gives you: Window X: Y: Width: Height:
-WINDOW_GEOMETRY=$(xdotool getwindowgeometry --shell $ACTIVE_WINDOW_ID)
-
-# Parse the geometry to get X, Y, Width, Height
-eval "$WINDOW_GEOMETRY"
-
-# Calculate the center of the active window
-# X_CENTER = X_WINDOW + (WIDTH / 2)
-# Y_CENTER = Y_WINDOW + (HEIGHT / 2)
-MOUSE_X=$((X + WIDTH / 2))
-MOUSE_Y=$((Y + HEIGHT / 2))
-
-# Move the mouse to the center of the active window
-xdotool mousemove "$MOUSE_X" "$MOUSE_Y"
-#### Mouse tango to open on active screen #####
-
 # Get connected Bluetooth devices with battery levels
 connected_devices=$(bluetoothctl devices Connected | while read -r _ mac name; do
     battery_level=$(bluetoothctl info "$mac" | grep "Battery Percentage" | awk -F '[()]' '{print $2}')
