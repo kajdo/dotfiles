@@ -8,4 +8,8 @@ configuration {
   display-combi: "  ";
 }
 //@theme "themes/nord.rasi"
-@theme "/home/kajdo/.config/rofi/themes/rounded-blue-dark.rasi"
+// @theme "/home/kajdo/.config/rofi/themes/rounded-blue-dark.rasi"
+
+//@theme "/home/kajdo/.config/rofi/themes/kajdo-nord.rasi"
+
+@theme "/home/kajdo/.config/rofi/themes/kajdo-mix.rasi"
