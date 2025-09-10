@@ -2,12 +2,16 @@
 alias UU='cd /etc/nixos && sudo nix flake update && sudo nixos-rebuild switch'
 
 # fun stuff
+alias ss='/home/kajdo/git/stream-sports/get'
+alias ssl='/home/kajdo/git/stream-sports/live-get'
 alias neofetch='fastfetch'
 alias wget='wget2'
 alias cat='bat -p'
 alias linutil='curl -fsSL https://christitus.com/linuxdev | sh'
 alias fin='cd /home/kajdo/git/aktienator/ && ./nix_start'
-alias chat='nix develop /home/kajdo/git/opencode --command bun run /home/kajdo/git/opencode/packages/opencode/src/index.ts'
+# alias chat='nix develop /home/kajdo/git/opencode --command bun run /home/kajdo/git/opencode/packages/opencode/src/index.ts'
+alias chat='nix develop /home/kajdo/git/bak_opencode --command bun run --conditions=development /home/kajdo/git/bak_opencode/packages/opencode/src/index.ts'
+alias opc='cd "$PWD" && nix develop /home/kajdo/git/opencode --command bun run --conditions=development /home/kajdo/git/opencode/packages/opencode/src/index.ts'
 alias sysprompt='$HOME/git/prompts/set-sysprompt'
 alias lopencode='nix develop /path/to/your/opencode --command bun run /path/to/your/opencode/packages/opencode/src/index.ts'
 
@@ -48,3 +52,4 @@ alias clock='tty-clock -c -C 4'
 # Tmux aliases
 alias nmux='tmux new -s'
 alias cmux='tmux new -As'
+alias dmux='tmux kill-session -t'

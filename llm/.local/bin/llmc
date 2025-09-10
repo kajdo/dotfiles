@@ -10,11 +10,17 @@ if [ ! -f "$1" ]; then
   exit 1
 fi
 
+# (
+#   echo '```'
+#   cat "$1"
+#   echo '```'
+# ) | xclip -selection clipboard
+
 (
   echo '```'
   cat "$1"
   echo '```'
-) | xclip -selection clipboard
+) | wl-copy
 
 echo "Content of '$1' copied to clipboard."
 
