@@ -22,8 +22,11 @@
 @define-color black-solid rgba(0, 0, 0, 1.0);
 
 * {
-    font-family: 'Fira Code Nerd Font', monospace;
+    /* font-family: 'Fira Code Nerd Font', monospace; */
+    /* fc-list | grep -i "FiraCode Nerd Font Mono" */
+    font-family: 'FiraCode Nerd Font Mono', monospace;
     font-weight: bold;
+    /* font-size: 13px; */
     font-size: 13px;
 }
 
@@ -66,9 +69,10 @@ button:hover {
 #workspaces button label {
     /* Use the icon font directly for labels to ensure correct rendering */
     /* font-family: 'Font Awesome 6 Free', monospace; */
-    font-family: 'Fira Code Nerd Font';
+    /* font-family: 'Fira Code Nerd Font'; */
+    font-family: 'FiraCode Nerd Font Mono';
     /* font-weight: bold; */
-    font-size: 12px;
+    font-size: 19px;
     background-color: transparent;
     color: @white;
     /* border-radius: 10px; */
