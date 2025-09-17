@@ -15,7 +15,7 @@
     "modules-right": [
         // "idle_inhibitor",
         // "pulseaudio",
-        // "network",
+        // "network#native",
         // "power-profiles-daemon",
         // "cpu",
         // "memory",
@@ -25,7 +25,8 @@
         "custom/bluetooth",
         "battery",
         // "tray",
-        "clock"
+        "clock",
+        "custom/network"
     ],
     // Modules configuration
     "hyprland/workspaces": {
@@ -174,7 +175,7 @@
         "power-saver": ""
       }
     },
-    "network": {
+    "network#native": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
         "format-wifi": "{essid} ({signalStrength}%) ",
         "format-ethernet": "{ipaddr}/{cidr} ",
@@ -182,6 +183,14 @@
         "format-linked": "{ifname} (No IP) ",
         "format-disconnected": "Disconnected ⚠",
         "format-alt": "{ifname}: {ipaddr}/{cidr}"
+    },
+    "custom/network": {
+        "format": "{}",
+        "interval": 5,
+        "exec": "$HOME/.config/waybar/network.sh",
+        "return-type": "json",
+        "on-click": "$HOME/.config/waybar/network.sh toggle && $HOME/.config/waybar/network.sh",
+        "tooltip": true
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float

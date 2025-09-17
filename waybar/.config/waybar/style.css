@@ -363,3 +363,9 @@ label:focus {
     padding: 0 10px;
     color: #ffffff;
 }
+
+#custom-network {
+    background-color: @darkgray;
+    padding: 0 10px;
+    color: #ffffff;
+}
