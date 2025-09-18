@@ -6,6 +6,7 @@ STATE_FILE="/tmp/waybar_bluetooth_state"
 # Define device name mappings with battery monitoring preferences
 declare -A device_mappings=(
     ["Q20i"]="Q20i:1"       # Q20i with battery monitoring enabled
+    ["CMF"]="Buds:1"        # CMF Buds Pro
     ["AirPods"]="AirPods:1" # AirPods with battery monitoring
     ["WH-1000XM4"]="Sony:1" # Sony with battery monitoring
     ["MX Master"]="MX:0"    # MX Master without battery monitoring
