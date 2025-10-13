@@ -153,7 +153,7 @@ export _ZO_DOCTOR=0
 ### additional nice stuff ###
 eval "$(zoxide init bash)"
 eval "$(mcfly init bash)"
-eval "$(mcfly-fzf init bash)"
+# eval "$(mcfly-fzf init bash)"
 eval "$(starship init bash)"
 
 export PATH=$PATH:$HOME/.local/bin

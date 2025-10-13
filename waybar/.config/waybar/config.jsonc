@@ -24,8 +24,8 @@
         // "sway/language",
         "custom/bluetooth",
         "battery",
-        // "tray",
         "clock",
+        "tray",
         "custom/network"
     ],
     // Modules configuration
