@@ -6,6 +6,24 @@
 --=============================================================================
 
 --=============================================================================
+-- SETUP for wsl and/or neovide
+--=============================================================================
+-- Detect if wsl or ubuntu - to enable mason
+-- Check for common environment variables present in WSL/Ubuntu but not NixOS
+-- You can pick the most reliable one for your setup.
+local is_wsl_ubuntu = (os.getenv("WSL_DISTRO_NAME") == "Ubuntu" or os.getenv("IS_WSL"))
+
+-- Set the global variable used by the mason plugin config
+if is_wsl_ubuntu then
+	vim.g.enable_mason_on_wsl = true
+	-- Optional: Set a flag to help with package location
+	vim.g.package_manager = "mason"
+else
+	vim.g.enable_mason_on_wsl = false
+	vim.g.package_manager = "nixos"
+end
+
+--=============================================================================
 -- BASIC SETUP & LEADER KEY
 --=============================================================================
 -- Set leader keys before anything else (plugins use these)
