@@ -304,37 +304,44 @@ require("lazy").setup({
 	{ -- LSP Configuration & Plugins
 		"neovim/nvim-lspconfig",
 		config = function()
-			-- taken from nix_init.lua
-			local lspconfig = require("lspconfig")
-
-			-- Configure LSPs
-			lspconfig.ts_ls.setup({
+			-- Configure LSPs using the new vim.lsp.config API
+			vim.lsp.config('ts_ls', {
 				cmd = { "typescript-language-server", "--stdio" },
+				filetypes = { "typescript", "typescriptreact", "javascript", "javascriptreact" },
 			})
 
-			lspconfig.pyright.setup({
+			vim.lsp.config('pyright', {
 				cmd = { "pyright-langserver", "--stdio" },
+				filetypes = { "python" },
 			})
 
-			lspconfig.bashls.setup({
+			vim.lsp.config('bashls', {
 				cmd = { "bash-language-server", "start" },
+				filetypes = { "sh", "bash" },
 			})
 
-			lspconfig.dockerls.setup({
+			vim.lsp.config('dockerls', {
 				cmd = { "docker-langserver", "--stdio" },
+				filetypes = { "dockerfile" },
 			})
 
-			lspconfig.yamlls.setup({
+			vim.lsp.config('yamlls', {
 				cmd = { "yaml-language-server", "--stdio" },
+				filetypes = { "yaml", "yml" },
 			})
 
-			lspconfig.vimls.setup({
+			vim.lsp.config('vimls', {
 				cmd = { "vim-language-server", "--stdio" },
+				filetypes = { "vim" },
 			})
 
-			lspconfig.eslint.setup({
+			vim.lsp.config('eslint', {
 				cmd = { "vscode-eslint-language-server", "--stdio" },
+				filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact" },
 			})
+
+			-- Enable the LSP servers
+			vim.lsp.enable({'ts_ls', 'pyright', 'bashls', 'dockerls', 'yamlls', 'vimls', 'eslint'})
 
 			-- kajdo - virtual text will be done via plugin (https://github.com/rachartier/tiny-inline-diagnostic.nvim)
 			vim.diagnostic.config({ virtual_text = false })
