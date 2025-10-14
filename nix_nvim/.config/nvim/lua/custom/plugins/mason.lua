@@ -30,16 +30,16 @@ return {
 		})
 	end,
 
-	-- If you use mason-lspconfig, you'd include it here
-	{
-		"williamboman/mason-lspconfig.nvim",
-		enabled = is_mason_enabled,
-		dependencies = { "williamboman/mason.nvim" },
-		config = function()
-			require("mason-lspconfig").setup({
-				-- Your mason-lspconfig configuration here (e.g., auto-install)
-				automatic_installation = true,
-			})
-		end,
-	},
+	-- -- If you use mason-lspconfig, you'd include it here
+	-- {
+	-- 	"williamboman/mason-lspconfig.nvim",
+	-- 	enabled = is_mason_enabled,
+	-- 	dependencies = { "williamboman/mason.nvim" },
+	-- 	config = function()
+	-- 		require("mason-lspconfig").setup({
+	-- 			-- Your mason-lspconfig configuration here (e.g., auto-install)
+	-- 			automatic_installation = true,
+	-- 		})
+	-- 	end,
+	-- },
 }
