@@ -6,6 +6,19 @@
 --=============================================================================
 
 --=============================================================================
+-- GUI specific configs
+--=============================================================================
+if vim.g.neovide then
+  -- set a nerd font
+  vim.opt.guifont = "CaskaydiaMono NFM:h14"
+  -- Remap Ctrl+V in Command-line mode (c) to paste from the system register (+)
+  vim.keymap.set('c', '<C-v>', '<C-r>+', {desc = 'Paste from system clipboard in command-line mode'})
+  -- Remap Ctrl+V in Insert mode (i) to paste from the system register (+)
+  vim.keymap.set('i', '<C-v>', '<C-r>+', {desc = 'Paste from system clipboard in insert mode'})
+end
+
+
+--=============================================================================
 -- SETUP for wsl and/or neovide
 --=============================================================================
 -- Detect if wsl or ubuntu - to enable mason
