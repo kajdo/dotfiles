@@ -126,20 +126,20 @@ fi
 # Fuzzy search with ripgrep and open in editor
 # Usage: gg <search_term>
 gg() {
-	if [ -z "$1" ]; then
-		echo "Usage: gg <search_term>"
-		return 1
-	fi
+if [ -z "$1" ]; then
+	echo "Usage: gg <search_term>"
+	return 1
+fi
 
-	rg --line-number --no-heading --color=always -i -w --hidden "$1" . |
-		fzf --ansi \
-			--delimiter ':' \
-			--preview 'bat --style=numbers --color=always --highlight-line {2} --line-range +{2}: {1}' \
-			--preview-window 'up,60%,border-bottom' \
-			--bind 'enter:execute(eval exec ${EDITOR:-nvim} +{2} {1})' \
-			--bind 'ctrl-c:abort' \
-			--bind 'ctrl-u:preview-half-page-up' \
-			--bind 'ctrl-d:preview-half-page-down'
+rg --line-number --no-heading --color=always -i -w --hidden "$1" . |
+	fzf --ansi \
+		--delimiter ':' \
+		--preview 'bat --style=numbers --color=always --highlight-line {2} --line-range +{2}: {1}' \
+		--preview-window 'up,60%,border-bottom' \
+		--bind 'enter:execute(eval exec ${EDITOR:-nvim} +{2} {1})' \
+		--bind 'ctrl-c:abort' \
+		--bind 'ctrl-u:preview-half-page-up' \
+		--bind 'ctrl-d:preview-half-page-down'
 }
 
 # add individual pathes
