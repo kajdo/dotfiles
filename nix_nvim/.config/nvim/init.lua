@@ -128,7 +128,7 @@ require("lazy").setup({
 	--=============================================================================
 
 	-- Auto-detect indentation settings
-	"tpope/vim-sleuth",
+	-- "tpope/vim-sleuth",
 
 	--=============================================================================
 	-- FILE EXPLORATION & SEARCH
@@ -482,8 +482,3 @@ require("lazy").setup({
 	require("kickstart.plugins.indent_line"),
 	require("kickstart.plugins.autopairs"),
 })
-
---=============================================================================
--- MODELINE (VIM SETTINGS)
---=============================================================================
--- vim: ts=2 sts=2 sw=2 et
