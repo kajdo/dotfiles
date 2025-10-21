@@ -2,6 +2,7 @@ format = """
 [](#3B4252)\
 $python\
 $username\
+$custom\
 $hostname\
 [](bg:#434C5E fg:#3B4252)\
 $directory\
@@ -29,12 +30,37 @@ command_timeout = 5000
 # Disable the blank line at the start of the prompt
 # add_newline = false
 
+
 # You can also replace your username with a neat symbol like  to save some space
 [username]
 show_always = true
 style_user = "bg:#3B4252"
 style_root = "bg:#3B4252"
 format = '[$user ]($style)'
+
+# 💡 NEW WORKING CONFIGURATION: Custom Command Module
+[custom.nix_shell]
+# The command Starship runs to decide whether to display the module.
+# It checks:
+# 1. If $SHLVL > 1 (indicates a nested shell, likely nix-shell)
+# 2. If the IN_NIX_SHELL variable is present OR if the PATH contains /nix/store (reliable Nix check)
+command = """
+if [[ $SHLVL -gt 1 ]] && ([ -n "$IN_NIX_SHELL" ] || echo "$PATH" | grep -q "/nix/store"); then
+  # The output will be used in the 'format' string below as '$output'
+  if [ -n "$IN_NIX_SHELL" ] && [ "$IN_NIX_SHELL" = "pure" ]; then
+    # echo "  (pure)"
+    echo "  "
+  else
+    # echo "  (impure)"
+    echo "  "
+  fi
+fi
+"""
+# Use the same style and format as your original:
+style = "bg:#3B4252"
+format = '[$output ]($style)'
+# This tells Starship to always run the command and show output if non-empty
+when = "true"
 
 [hostname]
 ssh_only = true 
