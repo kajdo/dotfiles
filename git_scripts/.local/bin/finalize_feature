@@ -7,4 +7,4 @@ git push
 git checkout main
 
 # open browser with the url of the git
-vivaldi --new-window "$(show_git_url)"
+xdg-open "$(show_git_url)"
