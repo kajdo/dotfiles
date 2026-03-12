@@ -12,7 +12,7 @@
 MIN_RESOLUTION=1080 # Set to 0 to disable minimum resolution preference
 
 # Define common yt-dlp options, including cookies
-YTDLP_COMMON_OPTIONS="--cookies-from-browser vivaldi"
+YTDLP_COMMON_OPTIONS="--cookies-from-browser helium"
 # Uncomment the line below if you prefer to use .netrc for all yt-dlp calls
 # YTDLP_COMMON_OPTIONS+=" --netrc"
 
